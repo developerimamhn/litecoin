@@ -1808,4 +1808,8 @@ body {
   .backgroundheader {
     background: linear-gradient(180deg, #141024 0%, #070510 50%);
   }
+  .coonatainaedgaewf{
+    border-radius: 50px 50px 24px 24px;
+    background: linear-gradient(180deg, rgba(39, 36, 253, 0.27) 0%, rgba(39, 36, 253, 0.00) 50%), #000;
+  }
 }

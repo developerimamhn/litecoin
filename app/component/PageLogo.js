@@ -14,7 +14,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const PageLogo = () => {
-    const listRefs = useRef([]);
+    const textReff = useRef([]);
     const wrapperRef = useRef(null); // Outer container
   const gridItem1Ref = useRef(null); // First grid item (text content)
   const acquireRef = useRef(null); // Second grid item (image)
@@ -108,37 +108,58 @@ const PageLogo = () => {
   //   );
   // }, []);
 
-  const textReff = useRef(null);
+   useEffect(() => {
+  const el = textReff.current;
 
-  useEffect(() => {
-    const el = textReff.current;
-    const words = el.textContent.split(" ");
-    el.textContent = "";
+  // recursive function to handle nested spans properly
+  const wrapWords = (node) => {
+    if (node.nodeType === 3) {
+      const words = node.textContent.split(/(\s+)/); // keep spaces intact
+      const fragment = document.createDocumentFragment();
 
-    words.forEach((word) => {
-      const span = document.createElement("span");
-      span.textContent = word + " ";
-      span.style.display = "inline-block";
-      // span.style.opacity = 0;
-      // span.style.transform = "translateY(30px)";
-      span.style.color = "#565363";
-      el.appendChild(span);
-    });
+      words.forEach((word) => {
+        if (word.trim() === "") {
+          fragment.appendChild(document.createTextNode(word)); // preserve spaces
+        } else {
+          const span = document.createElement("span");
+          span.textContent = word;
+          span.style.display = "inline-block";
+          span.style.opacity = 0;
+          span.style.filter = "blur(6px)";
+          span.style.transform = "translateY(30px)";
+          fragment.appendChild(span);
+        }
+      });
 
-    gsap.to(el.children, {
-      scrollTrigger: {
-        trigger: el,
-        start: "top 80%", // start animation when paragraph comes 80% into view
-        toggleActions: "play none none reverse",
-      },
-      opacity: 1,
-      y: 0,
-      color: "#ffffff",
-      duration: 0.8,
-      ease: "power3.out",
-      stagger: 0.1,
-    });
-  }, []);
+      return fragment;
+    } else {
+      const cloned = node.cloneNode(false);
+      node.childNodes.forEach((child) => cloned.appendChild(wrapWords(child)));
+      return cloned;
+    }
+  };
+
+  const wrapped = wrapWords(el);
+  el.innerHTML = "";
+  el.appendChild(wrapped);
+
+  gsap.to(el.querySelectorAll("span"), {
+    scrollTrigger: {
+      trigger: el,
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    duration: 1,
+    ease: "power3.out",
+    stagger: 0.08,
+  });
+}, []);
+
+
+
   // 
     return (
         <div className='relative  pt-[36px] sm:pt-[40px] md:pt-[48px] lg:pt-[64px] xl:pt-[96px] 2xl:pt-[131px] sm:px-0 px-[24px] 2xl:px-[128px]'>
@@ -146,7 +167,7 @@ const PageLogo = () => {
           <div className="flex items-center flex-col  justify-center relative z-10 container mx-auto">
             <div ref={wrapperRef} className='svgsasdf w-fit flex items-center justify-center mb-[32px] sm:mb-[36px] md:mb-[40px] lg:mb-[48px] xl:mb-[64px] 2xl:mb-[84px]'>
                 <button className='buttonauditeltsss relative cursor-pointer text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] flex items-center py-[7px] sm:py-[8px] md:py-[6px] pr-[10px] sm:pr-[11px] md:pr-[12px] lg:pr-[13px] xl:pr-[14px] 2xl:pr-[15px] group gap-[7.50px] pl-[7px] sm:pl-[8px] md:pl-[6px]'>
-                    <div
+                    <div 
                         class="absolute left-1/2 -translate-x-1/2 -top-px block h-px w-[80%]  animate-gradient bg-linear-to-r from-[#4f1ad600]  via-[#4F1AD6] bg-size-[var(--bg-size)_100%] rounded-[inherit] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] p-px mask-subtract!"
                     ></div>
                     <svg className="w-[22px] md:w-[25px] xl:w-[29px]" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -165,7 +186,7 @@ const PageLogo = () => {
                 </button>
             </div>
             <div>
-            <p ref={textReff} className="workingtext text-[16px] sm:text-[24px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[44px] 2xl:px-25">Litecoin is a peer-to-peer Internet currency that enables instant, near-zero cost payments to anyone in the world. Litecoin is an open source, global payment network that is fully decentralized without any central authorities.</p></div>
+            <p ref={textReff} className="workingtext !text-white text-[16px] sm:text-[24px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[44px] 2xl:px-25">Litecoin is a peer-to-peer Internet currency that enables instant, near-zero cost payments to anyone <span className='!text-[#565363]'> in the world. Litecoin is an open source, global payment network that is fully decentralized without any central authorities.</span> </p></div>
           </div>
         </div>
     );

@@ -19,7 +19,8 @@ import Image from 'next/image';
 const Pagefive = () => {
   const swiperRef = useRef(null);
   return (
-    <div id="Blog" className="relative py-8 sm:py-9 md:py-10 lg:py-12 xl:py-16 2xl:py-[100px]">
+    <div id="Blog" className="relative py-8 sm:py-9 md:py-10 lg:py-12 xl:py-16 2xl:py-[100px] mt-[36px] sm:mt-[40px] md:mt-[48px] lg:mt-[64px] xl:mt-[96px] 2xl:mt-[128px] 2xl:px-6">
+      <div className='coonatainaedgaewf w-full h-full absolute top-0 left-0 '></div>
       <div id='pin-windmill' className="relative container md:flex-row flex-col mx-auto flex jusitfy-between md:grid grid-cols-12 gap-4 items-center sm:px-0 px-6">
 
         <button  className="custom-next cursor-pointer md:block hidden transition hover:scale-110 hover:opacity-80 duration-300 col-span-2 relative mr-auto 2xl:w-1/2 h-fit rounded-full lg:col-start-3">
@@ -58,7 +59,7 @@ const Pagefive = () => {
           effect={'flip'}
           grabCursor={true}
           pagination={{ clickable: true }}
-          autoplay={{  // 🔹 Autoplay enable
+          autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
