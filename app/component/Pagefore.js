@@ -71,7 +71,7 @@ const cardsRef = useRef([]);
   useEffect(() => {
     gsap.fromTo(
       cardsRef.current,
-      { opacity: 0, y: 300, x: 300 },
+      { opacity: 0, y: 200, x: 200 },
       {
         opacity: 1,
         y: 0,
@@ -81,7 +81,7 @@ const cardsRef = useRef([]);
         stagger: 0.2, // card গুলো sequentially animation হবে
         scrollTrigger: {
           trigger: cardsRef.current[0], // প্রথম card কে trigger বানাচ্ছি
-          start: "top 85%",
+          start: "top 90%",
           end: "bottom 50%",
           scrub: true,
         },
@@ -123,7 +123,7 @@ const cardsRef = useRef([]);
                 className="downloaddifferentland overflow-hidden p-[13px] sm:p-[14px] md:p-[15px] lg:p-[16px] xl:p-[20px] 2xl:p-[24px] group flex items-center justify-center flex-col relative"
               >
                 {/* Top gradient bar */}
-                <div className="absolute left-1/2 -translate-x-1/2 -top-px block h-px w-0 duration-500 group-hover:opacity-100 opacity-0 group-hover:w-[70%] bg-gradient-to-r from-[#4f1ad600] via-[#4F1AD6] rounded-[inherit]"></div>
+                <div className="absolute left-1/2 -translate-x-1/2 top-0 block h-px w-0 duration-500 group-hover:opacity-100 opacity-0 group-hover:w-[70%] bg-gradient-to-r from-[#4f1ad600] via-[#4F1AD6] rounded-[inherit]"></div>
 
                 {/* Icon */}
                 <Image className="w-[24px] sm:w-[32px] md:w-[36px] lg:w-[40px] xl:w-[48px] 2xl:w-[60px] pb-[11px] sm:pb-[12px] md:pb-[13px] lg:pb-[14px] xl:pb-[15px] 2xl:pb-[16px]" src={card.image} alt={card.title}/>

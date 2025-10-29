@@ -95,10 +95,9 @@ const HeroPage = () => {
 
     return (
         <div id="hero" className='relative'>
-          {/* <Image  src={pageone} alt=''/> */}
-          <div className='relative z-2'>
+          <div className='relative z-2 '>
             <div className='container mx-auto px-[24px] sm:px-0 w-full relative flex items-center justify-center flex-col'>
-                <div  className='flex items-center justify-center flex-col pt-[70px] sm:pt-[70px] md:pt-[90px] lg:pt-[120px] xl:pt-[130px] 2xl:pt-[12%] relative'>
+                <div  className='flex items-center justify-between flex-col h-screen pt-[70px] sm:pt-[70px] md:pt-[90px] lg:pt-[120px] xl:pt-[130px] 2xl:pt-[8%] relative'>
                   <div className='flex items-center flex-col justify-center'>
                     <h2 ref={textRef} className="tradines text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[64px] 2xl:text-[86px] font-bold text-center mt-10">
                       The Cryptocurrency <br className="sm:block hidden" /> For Payments
@@ -110,10 +109,7 @@ const HeroPage = () => {
                         </button>
                       </div>
                   </div>
-                  {/* <div className=''> */}
-                  <Image ref={imgRef} className='mx-auto w-[100%] mt-auto z-10 pt-[24px] sm:pt-[32px] md:pt-[36px] lg:pt-[40px] xl:pt-[48px] 2xl:pt-[64px] opacity-0 z-0 select-none' src={pageone} alt=''/>
-                  <Image ref={imgRef} className='mx-auto w-[100%] mt-auto z-10  absolute  !bottom-0 left-1/2 -translate-x-1/2' src={pageone} alt=''/>
-                  {/* </div> */}
+                  <Image ref={imgRef} className='mx-auto w-fit h-[65%] mt-auto z-10 pt-[24px] sm:pt-[32px] md:pt-[36px] lg:pt-[40px] xl:pt-[48px] 2xl:pt-[64px]' src={pageone} alt=''/>
                 </div>
                 
             </div>
