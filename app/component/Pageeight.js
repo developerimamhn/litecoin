@@ -65,7 +65,7 @@ const Pageeight = () => {
                   </span>{" "}
                   on the go with our mobile apps.
                 </h2>
-                <h3 className='takeexper text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[20px] pt-[14px] sm:pt-[15px] md:pt-[16px] lg:pt-[20px] xl:pt-[24px] 2xl:pt-[30px]'>Take control of your crypto anytime with the app that fits your experience</h3>
+                <h3 className='takeexper text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[20px] pt-3.5 sm:pt-[15px] md:pt-4 lg:pt-5 xl:pt-6 2xl:pt-[30px]'>Take control of your crypto anytime with the app that fits your experience</h3>
                 <p className="bitstartp text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] pt-[10px] sm:pt-[11px] md:pt-[12px] lg:pt-[13px] xl:pt-[14px] 2xl:pt-[15px]">
                 Choose between the Bitstamp app, the easiest way to buy and sell crypto, or the Bitstamp Pro app, built for pro traders and crypto experts.
                 </p>

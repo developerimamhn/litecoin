@@ -6,7 +6,7 @@ import { useRef,useEffect  } from 'react';
 import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/navigation';
-import { EffectFlip, Navigation, Pagination } from 'swiper/modules';
+import { EffectFlip, Navigation, Pagination,Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -58,11 +58,16 @@ const Pagefive = () => {
           effect={'flip'}
           grabCursor={true}
           pagination={{ clickable: true }}
+          autoplay={{  // 🔹 Autoplay enable
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
           navigation={{
             nextEl: '.custom-next',
             prevEl: '.custom-prev',
           }}
-          modules={[EffectFlip, Pagination, Navigation]}
+          modules={[EffectFlip, Pagination, Navigation,Autoplay]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           className="mySwiper w-full col-span-8 lg:col-span-5 2xl:col-span-4"
         >
