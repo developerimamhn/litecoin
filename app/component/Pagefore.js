@@ -76,13 +76,13 @@ const cardsRef = useRef([]);
         opacity: 1,
         y: 0,
         x: 0,
-        duration: 1,
+        duration: 1.5,
         ease: "power2.out",
-        stagger: 0.2, // card গুলো sequentially animation হবে
+        stagger: 0.3, // card গুলো sequentially animation হবে
         scrollTrigger: {
           trigger: cardsRef.current[0], // প্রথম card কে trigger বানাচ্ছি
           start: "top 90%",
-          end: "bottom 50%",
+          end: "bottom 80%",
           scrub: true,
         },
       }
@@ -92,7 +92,7 @@ const cardsRef = useRef([]);
 
   return (
     <div
-      id="howitworks" className=" relative overflow-hidden  pb-[40px] sm:pb-[40px] md:pb-[48px] lg:pb-[64px] xl:pb-[100px] 2xl:!pb-[130px]">
+      id="howitworks" className=" relative   pb-[40px] sm:pb-[40px] md:pb-[48px] lg:pb-[64px] xl:pb-[100px] 2xl:!pb-[130px]">
         <div className='leadingsectionarea w-full h-full absolute bottom-0 left-0'></div>
         <div className=''>
           <div className='flex items-center justify-center relative py-[36px] sm:py-[40px] md:py-[48px] lg:py-[64px] xl:py-[96px] 2xl:py-[128px]'>
@@ -119,18 +119,17 @@ const cardsRef = useRef([]);
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto sm:px-0 px-6 overflow-hidden">
             {cardsData.map((card, index) => (
               <div
-  key={card.id}
-  ref={(el) => (cardsRef.current[index] = el)}
-  className={`overflow-hidden p-[13px] sm:p-[14px] md:p-[15px] lg:p-[16px] xl:p-[20px] 2xl:p-[24px] group flex items-center justify-center flex-col relative rounded-[20px] border border-white/10 transition-all duration-400 
-    ${
-      index === 0
-        ? // 👉 index 0 — fixed background (no hover effect)
-          "bg-gradient-to-b  from-[rgba(128,89,227,0.15)] to-[rgba(255,255,255,0)]"
-        : // 👉 others — hover effect works normally
-          "bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0)] hover:from-[rgba(128,89,227,0.15)] hover:to-[rgba(255,255,255,0)]"
-    }`}
->
-                {/* Top gradient bar */}
+                  key={card.id}
+                  ref={(el) => (cardsRef.current[index] = el)}
+                  className={`overflow-hidden p-[13px] sm:p-[14px] md:p-[15px] lg:p-[16px] xl:p-[20px] 2xl:p-[24px] group flex items-center justify-center flex-col relative rounded-[20px] border border-white/10 transition-all duration-400 
+                    ${
+                      index === 0
+                        ? // 👉 index 0 — fixed background (no hover effect)
+                          "bg-gradient-to-b  from-[rgba(128,89,227,0.15)] to-[rgba(255,255,255,0)]"
+                        : // 👉 others — hover effect works normally
+                          "bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0)] hover:from-[rgba(128,89,227,0.15)] hover:to-[rgba(255,255,255,0)]"
+                    }`}
+                >
                 <div
                   className={`absolute left-1/2 -translate-x-1/2 top-0 block h-px duration-500 bg-gradient-to-r from-[#4f1ad600] via-[#4F1AD6] rounded-[inherit] ${
                     index === 0
