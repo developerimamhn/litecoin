@@ -2,7 +2,6 @@
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -45,7 +44,7 @@ const Pageone = () => {
                     You can contact Litecoin project development team at <div className='text-[#8059E3]'>contact@litecoin.org</div>
                   </p>
                   <ul className='flex flex-col gap-[12px] sm:gap-[13px] md:gap-[14px] lg:gap-[15px] xl:gap-[16px] 2xl:gap-[18px] mt-[20px] sm:mt-[24px] md:mt-[32px] lg:mt-[36px] xl:mt-[40px] 2xl:mt-[48px]'>
-                    <li className='contackmailsse px-[12px] sm:px-[13px] md:px-[14px] lg:px-[15px] xl:px-[16px] 2xl:px-[20px] py-[11px] sm:py-[12px] md:py-[13px] lg:py-[14px] xl:py-[15px] 2xl:py-[16px] flex items-center justify-between'>
+                    <li className='contackmailsse px-[12px] sm:px-[13px] md:px-[14px] group lg:px-[15px] xl:px-[16px] 2xl:px-[20px] py-[11px] sm:py-[12px] md:py-[13px] lg:py-[14px] xl:py-[15px] 2xl:py-[16px] flex items-center justify-between'>
                       <div className='flex items-center gap-[13px] sm:gap-[14px] md:gap-[15px] lg:gap-[16px] xl:gap-[20px] 2xl:gap-[24px]'>
                         <svg
                               className="w-[32px] md:w-[36px] lg:w-[40px] xl:w-[48px] 2xl:w-[56px]"
@@ -59,19 +58,6 @@ const Pageone = () => {
                                   <rect width="56" height="57" rx="12" />
                                 </clipPath>
                               </defs>
-
-                              {/* <foreignObject x="-24" y="-24" width="104" height="105">
-                                <div
-                                  xmlns="http://www.w3.org/1999/xhtml"
-                                  style={{
-                                    height: "100%",
-                                    width: "100%",
-                                    backdropFilter: "blur(12px)",
-                                    WebkitBackdropFilter: "blur(12px)", // Safari fix
-                                    clipPath: "url(#bgblur_clip)",
-                                  }}
-                                />
-                              </foreignObject> */}
 
                               <g clipPath="url(#bgblur_clip)">
                                 <rect width="56" height="57" rx="12" fill="#4B4848" fillOpacity="0.1" />
@@ -99,63 +85,108 @@ const Pageone = () => {
                         </div>
                       </div>
                       
-                      <svg
-                        className="w-[24px] md:w-[32px] lg:w-[36px] xl:w-[40px] 2xl:w-[46px] rounded-full"
-                        viewBox="0 0 46 46"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <foreignObject x="-24" y="-24" width="94" height="94">
-                          <div
-                            xmlns="http://www.w3.org/1999/xhtml"
-                            style={{
-                              backdropFilter: "blur(12px)",
-                              clipPath: "url(#bgblur_0_1401_2935_clip_path)",
-                              height: "100%",
-                              width: "100%",
-                            }}
-                          ></div>
-                        </foreignObject>
+                      <div className="relative w-[24px] md:w-[32px] lg:w-[36px] xl:w-[40px] 2xl:w-[46px] h-[24px] md:h-[32px] lg:h-[36px] xl:h-[40px] 2xl:h-[46px] cursor-pointer ">
+      {/* Default SVG (gray/white blur) */}
+                        <svg
+                          className="absolute inset-0 w-full h-full opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+                          
+                          viewBox="0 0 46 46"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <foreignObject x="-24" y="-24" width="94" height="94">
+                            <div
+                              xmlns="http://www.w3.org/1999/xhtml"
+                              style={{
+                                backdropFilter: "blur(12px)",
+                                clipPath: "url(#bgblur_0_1401_2952_clip_path)",
+                                height: "100%",
+                                width: "100%",
+                              }}
+                            ></div>
+                          </foreignObject>
+                          <g data-figma-bg-blur-radius="24">
+                            <rect width="46" height="46" rx="23" fill="white" fillOpacity="0.04" />
+                            <rect
+                              x="0.5"
+                              y="0.5"
+                              width="45"
+                              height="45"
+                              rx="22.5"
+                              stroke="white"
+                              strokeOpacity="0.1"
+                            />
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
+                              fill="white"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="bgblur_0_1401_2952_clip_path" transform="translate(24 24)">
+                              <rect width="46" height="46" rx="23" />
+                            </clipPath>
+                          </defs>
+                        </svg>
 
-                        <g data-figma-bg-blur-radius="24">
-                          <rect width="46" height="46" rx="23" fill="url(#paint0_linear_1401_2941)" />
-                          <rect
-                            x="0.5"
-                            y="0.5"
-                            width="45"
-                            height="45"
-                            rx="22.5"
-                            stroke="white"
-                            strokeOpacity="0.1"
-                          />
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
-                            fill="white"
-                          />
-                        </g>
-
-                        <defs>
-                          <clipPath id="bgblur_0_1401_2941_clip_path" transform="translate(24 24)">
-                            <rect width="46" height="46" rx="23" />
-                          </clipPath>
-                          <linearGradient
-                            id="paint0_linear_1401_2941"
-                            x1="23"
-                            y1="0"
-                            x2="23"
-                            y2="46"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop stopColor="#4F1AD6" />
-                            <stop offset="1" stopColor="#8059E3" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
+                        {/* Hover SVG (gradient purple) */}
+                        <svg
+                          className="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                          viewBox="0 0 46 46"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <foreignObject x="-24" y="-24" width="94" height="94">
+                            <div
+                              xmlns="http://www.w3.org/1999/xhtml"
+                              style={{
+                                backdropFilter: "blur(12px)",
+                                clipPath: "url(#bgblur_0_1401_2941_clip_path)",
+                                height: "100%",
+                                width: "100%",
+                              }}
+                            ></div>
+                          </foreignObject>
+                          <g data-figma-bg-blur-radius="24">
+                            <rect width="46" height="46" rx="23" fill="url(#paint0_linear_1401_2941)" />
+                            <rect
+                              x="0.5"
+                              y="0.5"
+                              width="45"
+                              height="45"
+                              rx="22.5"
+                              stroke="white"
+                              strokeOpacity="0.1"
+                            />
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
+                              fill="white"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="bgblur_0_1401_2941_clip_path" transform="translate(24 24)">
+                              <rect width="46" height="46" rx="23" />
+                            </clipPath>
+                            <linearGradient
+                              id="paint0_linear_1401_2941"
+                              x1="23"
+                              y1="0"
+                              x2="23"
+                              y2="46"
+                              gradientUnits="userSpaceOnUse"
+                            >
+                              <stop stopColor="#4F1AD6" />
+                              <stop offset="1" stopColor="#8059E3" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
 
                     </li>
-                    <li className='contackmailsse px-[12px] sm:px-[13px] md:px-[14px] lg:px-[15px] xl:px-[16px] 2xl:px-[20px] py-[11px] sm:py-[12px] md:py-[13px] lg:py-[14px] xl:py-[15px] 2xl:py-[16px] flex items-center justify-between'>
+                    <li className='contackmailsse px-[12px] sm:px-[13px] md:px-[14px] group lg:px-[15px] xl:px-[16px] 2xl:px-[20px] py-[11px] sm:py-[12px] md:py-[13px] lg:py-[14px] xl:py-[15px] 2xl:py-[16px] flex items-center justify-between'>
                       <div className='flex items-center gap-[13px] sm:gap-[14px] md:gap-[15px] lg:gap-[16px] xl:gap-[20px] 2xl:gap-[24px]'>
                         <svg
                               className="w-[32px] md:w-[36px] lg:w-[40px] xl:w-[48px] 2xl:w-[56px]"
@@ -212,63 +243,108 @@ const Pageone = () => {
                         </div>
                       </div>
                       
-                      <svg
-                        className="w-[24px] md:w-[32px] lg:w-[36px] xl:w-[40px] 2xl:w-[46px] rounded-full"
-                        viewBox="0 0 46 46"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <foreignObject x="-24" y="-24" width="94" height="94">
-                          <div
-                            xmlns="http://www.w3.org/1999/xhtml"
-                            style={{
-                              backdropFilter: "blur(12px)",
-                              clipPath: "url(#bgblur_0_1401_2935_clip_path)",
-                              height: "100%",
-                              width: "100%",
-                            }}
-                          ></div>
-                        </foreignObject>
+                       <div className="relative w-[24px] md:w-[32px] lg:w-[36px] xl:w-[40px] 2xl:w-[46px] h-[24px] md:h-[32px] lg:h-[36px] xl:h-[40px] 2xl:h-[46px] cursor-pointer ">
+      {/* Default SVG (gray/white blur) */}
+                        <svg
+                          className="absolute inset-0 w-full h-full opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+                          
+                          viewBox="0 0 46 46"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <foreignObject x="-24" y="-24" width="94" height="94">
+                            <div
+                              xmlns="http://www.w3.org/1999/xhtml"
+                              style={{
+                                backdropFilter: "blur(12px)",
+                                clipPath: "url(#bgblur_0_1401_2952_clip_path)",
+                                height: "100%",
+                                width: "100%",
+                              }}
+                            ></div>
+                          </foreignObject>
+                          <g data-figma-bg-blur-radius="24">
+                            <rect width="46" height="46" rx="23" fill="white" fillOpacity="0.04" />
+                            <rect
+                              x="0.5"
+                              y="0.5"
+                              width="45"
+                              height="45"
+                              rx="22.5"
+                              stroke="white"
+                              strokeOpacity="0.1"
+                            />
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
+                              fill="white"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="bgblur_0_1401_2952_clip_path" transform="translate(24 24)">
+                              <rect width="46" height="46" rx="23" />
+                            </clipPath>
+                          </defs>
+                        </svg>
 
-                        <g data-figma-bg-blur-radius="24">
-                          <rect width="46" height="46" rx="23" fill="url(#paint0_linear_1401_2941)" />
-                          <rect
-                            x="0.5"
-                            y="0.5"
-                            width="45"
-                            height="45"
-                            rx="22.5"
-                            stroke="white"
-                            strokeOpacity="0.1"
-                          />
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
-                            fill="white"
-                          />
-                        </g>
-
-                        <defs>
-                          <clipPath id="bgblur_0_1401_2941_clip_path" transform="translate(24 24)">
-                            <rect width="46" height="46" rx="23" />
-                          </clipPath>
-                          <linearGradient
-                            id="paint0_linear_1401_2941"
-                            x1="23"
-                            y1="0"
-                            x2="23"
-                            y2="46"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop stopColor="#4F1AD6" />
-                            <stop offset="1" stopColor="#8059E3" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
+                        {/* Hover SVG (gradient purple) */}
+                        <svg
+                          className="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                          viewBox="0 0 46 46"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <foreignObject x="-24" y="-24" width="94" height="94">
+                            <div
+                              xmlns="http://www.w3.org/1999/xhtml"
+                              style={{
+                                backdropFilter: "blur(12px)",
+                                clipPath: "url(#bgblur_0_1401_2941_clip_path)",
+                                height: "100%",
+                                width: "100%",
+                              }}
+                            ></div>
+                          </foreignObject>
+                          <g data-figma-bg-blur-radius="24">
+                            <rect width="46" height="46" rx="23" fill="url(#paint0_linear_1401_2941)" />
+                            <rect
+                              x="0.5"
+                              y="0.5"
+                              width="45"
+                              height="45"
+                              rx="22.5"
+                              stroke="white"
+                              strokeOpacity="0.1"
+                            />
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
+                              fill="white"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="bgblur_0_1401_2941_clip_path" transform="translate(24 24)">
+                              <rect width="46" height="46" rx="23" />
+                            </clipPath>
+                            <linearGradient
+                              id="paint0_linear_1401_2941"
+                              x1="23"
+                              y1="0"
+                              x2="23"
+                              y2="46"
+                              gradientUnits="userSpaceOnUse"
+                            >
+                              <stop stopColor="#4F1AD6" />
+                              <stop offset="1" stopColor="#8059E3" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
 
                     </li>
-                    <li className='contackmailsse px-[12px] sm:px-[13px] md:px-[14px] lg:px-[15px] xl:px-[16px] 2xl:px-[20px] py-[11px] sm:py-[12px] md:py-[13px] lg:py-[14px] xl:py-[15px] 2xl:py-[16px] flex items-center justify-between'>
+                    <li className='contackmailsse px-[12px] sm:px-[13px] md:px-[14px] group lg:px-[15px] xl:px-[16px] 2xl:px-[20px] py-[11px] sm:py-[12px] md:py-[13px] lg:py-[14px] xl:py-[15px] 2xl:py-[16px] flex items-center justify-between'>
                       <div className='flex items-center gap-[13px] sm:gap-[14px] md:gap-[15px] lg:gap-[16px] xl:gap-[20px] 2xl:gap-[24px]'>
                         <svg
                             className="w-[32px] md:w-[36px] lg:w-[40px] xl:w-[48px] 2xl:w-[56px]"
@@ -332,60 +408,105 @@ const Pageone = () => {
                         </div>
                       </div>
                       
-                      <svg
-                        className="w-[24px] md:w-[32px] lg:w-[36px] xl:w-[40px] 2xl:w-[46px] rounded-full"
-                        viewBox="0 0 46 46"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <foreignObject x="-24" y="-24" width="94" height="94">
-                          <div
-                            xmlns="http://www.w3.org/1999/xhtml"
-                            style={{
-                              backdropFilter: "blur(12px)",
-                              clipPath: "url(#bgblur_0_1401_2935_clip_path)",
-                              height: "100%",
-                              width: "100%",
-                            }}
-                          ></div>
-                        </foreignObject>
+                       <div className="relative w-[24px] md:w-[32px] lg:w-[36px] xl:w-[40px] 2xl:w-[46px] h-[24px] md:h-[32px] lg:h-[36px] xl:h-[40px] 2xl:h-[46px] cursor-pointer ">
+      {/* Default SVG (gray/white blur) */}
+                        <svg
+                          className="absolute inset-0 w-full h-full opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+                          
+                          viewBox="0 0 46 46"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <foreignObject x="-24" y="-24" width="94" height="94">
+                            <div
+                              xmlns="http://www.w3.org/1999/xhtml"
+                              style={{
+                                backdropFilter: "blur(12px)",
+                                clipPath: "url(#bgblur_0_1401_2952_clip_path)",
+                                height: "100%",
+                                width: "100%",
+                              }}
+                            ></div>
+                          </foreignObject>
+                          <g data-figma-bg-blur-radius="24">
+                            <rect width="46" height="46" rx="23" fill="white" fillOpacity="0.04" />
+                            <rect
+                              x="0.5"
+                              y="0.5"
+                              width="45"
+                              height="45"
+                              rx="22.5"
+                              stroke="white"
+                              strokeOpacity="0.1"
+                            />
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
+                              fill="white"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="bgblur_0_1401_2952_clip_path" transform="translate(24 24)">
+                              <rect width="46" height="46" rx="23" />
+                            </clipPath>
+                          </defs>
+                        </svg>
 
-                        <g data-figma-bg-blur-radius="24">
-                          <rect width="46" height="46" rx="23" fill="url(#paint0_linear_1401_2941)" />
-                          <rect
-                            x="0.5"
-                            y="0.5"
-                            width="45"
-                            height="45"
-                            rx="22.5"
-                            stroke="white"
-                            strokeOpacity="0.1"
-                          />
-                          <path
-                            fillRule="evenodd"
-                            clipRule="evenodd"
-                            d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
-                            fill="white"
-                          />
-                        </g>
-
-                        <defs>
-                          <clipPath id="bgblur_0_1401_2941_clip_path" transform="translate(24 24)">
-                            <rect width="46" height="46" rx="23" />
-                          </clipPath>
-                          <linearGradient
-                            id="paint0_linear_1401_2941"
-                            x1="23"
-                            y1="0"
-                            x2="23"
-                            y2="46"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop stopColor="#4F1AD6" />
-                            <stop offset="1" stopColor="#8059E3" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
+                        {/* Hover SVG (gradient purple) */}
+                        <svg
+                          className="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                          viewBox="0 0 46 46"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <foreignObject x="-24" y="-24" width="94" height="94">
+                            <div
+                              xmlns="http://www.w3.org/1999/xhtml"
+                              style={{
+                                backdropFilter: "blur(12px)",
+                                clipPath: "url(#bgblur_0_1401_2941_clip_path)",
+                                height: "100%",
+                                width: "100%",
+                              }}
+                            ></div>
+                          </foreignObject>
+                          <g data-figma-bg-blur-radius="24">
+                            <rect width="46" height="46" rx="23" fill="url(#paint0_linear_1401_2941)" />
+                            <rect
+                              x="0.5"
+                              y="0.5"
+                              width="45"
+                              height="45"
+                              rx="22.5"
+                              stroke="white"
+                              strokeOpacity="0.1"
+                            />
+                            <path
+                              fillRule="evenodd"
+                              clipRule="evenodd"
+                              d="M16.8673 29.1325C16.76 29.0252 16.6998 28.8796 16.6998 28.7278C16.6998 28.576 16.76 28.4304 16.8673 28.3231L27.3448 17.8456L20.1358 17.8455C19.9839 17.8455 19.8382 17.7852 19.7308 17.6778C19.6234 17.5704 19.5631 17.4247 19.5631 17.2728C19.5631 17.1209 19.6234 16.9752 19.7308 16.8678C19.8382 16.7604 19.9839 16.7 20.1358 16.7L28.7271 16.7001C28.879 16.7001 29.0246 16.7604 29.1321 16.8678C29.2395 16.9752 29.2998 17.1209 29.2998 17.2728L29.2998 25.8641C29.2998 26.016 29.2395 26.1616 29.1321 26.269C29.0246 26.3765 28.879 26.4368 28.7271 26.4368C28.5752 26.4368 28.4295 26.3765 28.3221 26.269C28.2146 26.1616 28.1543 26.016 28.1543 25.8641L28.1543 18.655L17.6768 29.1325C17.5694 29.2398 17.4238 29.3 17.272 29.3C17.1203 29.3 16.9747 29.2398 16.8673 29.1325Z"
+                              fill="white"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="bgblur_0_1401_2941_clip_path" transform="translate(24 24)">
+                              <rect width="46" height="46" rx="23" />
+                            </clipPath>
+                            <linearGradient
+                              id="paint0_linear_1401_2941"
+                              x1="23"
+                              y1="0"
+                              x2="23"
+                              y2="46"
+                              gradientUnits="userSpaceOnUse"
+                            >
+                              <stop stopColor="#4F1AD6" />
+                              <stop offset="1" stopColor="#8059E3" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </div>
 
                     </li>
                   </ul>

@@ -3,14 +3,14 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import dowDebian from "./image/dowDebian.png";
+import dowFedora from "./image/dowFedora.png";
+import dowLinux from "./image/dowLinux.png";
+import dowMac from "./image/dowMac.png";
+import dowUbuntu from "./image/dowUbuntu.png";
 import imageone from './image/Figure - Abstract Dots → 1xOqMa4sAAwBCrdkiSJfIXups.png.png';
 import dow from './image/litecionlaodin.png';
-import dowMac from "./image/dowMac.png";
-import dowLinux from "./image/dowLinux.png";
-import dowUbuntu from "./image/dowUbuntu.png";
-import dowFedora from "./image/dowFedora.png";
-import dowDebian from "./image/dowDebian.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,7 +92,8 @@ const cardsRef = useRef([]);
 
   return (
     <div
-      id="howitworks" className=" relative overflow-hidden 2xl:mx-[198px] pb-[40px] sm:pb-[40px] md:pb-[48px] lg:pb-[64px] xl:pb-[100px] 2xl:!pb-[130px]">
+      id="howitworks" className=" relative overflow-hidden  pb-[40px] sm:pb-[40px] md:pb-[48px] lg:pb-[64px] xl:pb-[100px] 2xl:!pb-[130px]">
+        <div className='leadingsectionarea w-full h-full absolute bottom-0 left-0'></div>
         <div className=''>
           <div className='flex items-center justify-center relative py-[36px] sm:py-[40px] md:py-[48px] lg:py-[64px] xl:py-[96px] 2xl:py-[128px]'>
             <Image className="absolute top-0 left-0 h-full z-2 w-full" src={imageone} alt="Loading..."/>
@@ -112,21 +113,38 @@ const cardsRef = useRef([]);
                 </linearGradient>
                 </defs>
                 </svg>
-                About Us
+                Download
             </button>
           </div>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto sm:px-0 px-6 overflow-hidden'>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto sm:px-0 px-6 overflow-hidden">
             {cardsData.map((card, index) => (
               <div
-                key={card.id}
-                ref={(el) => (cardsRef.current[index] = el)}
-                className="downloaddifferentland overflow-hidden p-[13px] sm:p-[14px] md:p-[15px] lg:p-[16px] xl:p-[20px] 2xl:p-[24px] group flex items-center justify-center flex-col relative"
-              >
+  key={card.id}
+  ref={(el) => (cardsRef.current[index] = el)}
+  className={`overflow-hidden p-[13px] sm:p-[14px] md:p-[15px] lg:p-[16px] xl:p-[20px] 2xl:p-[24px] group flex items-center justify-center flex-col relative rounded-[20px] border border-white/10 transition-all duration-400 
+    ${
+      index === 0
+        ? // 👉 index 0 — fixed background (no hover effect)
+          "bg-gradient-to-b  from-[rgba(128,89,227,0.15)] to-[rgba(255,255,255,0)]"
+        : // 👉 others — hover effect works normally
+          "bg-gradient-to-b from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0)] hover:from-[rgba(128,89,227,0.15)] hover:to-[rgba(255,255,255,0)]"
+    }`}
+>
                 {/* Top gradient bar */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-0 block h-px w-0 duration-500 group-hover:opacity-100 opacity-0 group-hover:w-[70%] bg-gradient-to-r from-[#4f1ad600] via-[#4F1AD6] rounded-[inherit]"></div>
+                <div
+                  className={`absolute left-1/2 -translate-x-1/2 top-0 block h-px duration-500 bg-gradient-to-r from-[#4f1ad600] via-[#4F1AD6] rounded-[inherit] ${
+                    index === 0
+                      ? "opacity-100 w-[70%]"
+                      : "opacity-0 w-0 group-hover:opacity-100 group-hover:w-[70%]"
+                  }`}
+                ></div>
 
                 {/* Icon */}
-                <Image className="w-[24px] sm:w-[32px] md:w-[36px] lg:w-[40px] xl:w-[48px] 2xl:w-[60px] pb-[11px] sm:pb-[12px] md:pb-[13px] lg:pb-[14px] xl:pb-[15px] 2xl:pb-[16px]" src={card.image} alt={card.title}/>
+                <Image
+                  className="w-[24px] sm:w-[32px] md:w-[36px] lg:w-[40px] xl:w-[48px] 2xl:w-[60px] pb-[11px] sm:pb-[12px] md:pb-[13px] lg:pb-[14px] xl:pb-[15px] 2xl:pb-[16px]"
+                  src={card.image}
+                  alt={card.title}
+                />
 
                 {/* Title */}
                 <h3 className="dowloheadibng text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[20px] 2xl:text-[24px] pb-[5px] lg:pb-[8px]">
@@ -137,22 +155,28 @@ const cardsRef = useRef([]);
                 <p className="lichangwinds text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] pb-[11px] sm:pb-[12px] md:pb-[13px] lg:pb-[14px] xl:pb-[15px] 2xl:pb-[16px]">
                   {card.version}
                 </p>
-                <div className='flex items-center gap-1.5 justify-between flex-wrap'>
-                {/* Button 1 */}
-                {card.buttons.map((btn, i) => (
-                  <button
-                    key={i}
-                    className="gpgsignbutton px-[11px] sm:px-[12px] md:px-[13px] lg:px-[14px] xl:px-[15px] 2xl:px-[16px] py-[5px] lg:py-[10px] mb-[13px] sm:mb-[14px] md:mb-[15px] lg:mb-[16px] xl:mb-[20px] 2xl:mb-[23px]"
-                  >
-                    {btn}
-                  </button>
-                ))}
+
+                <div className="flex items-center gap-1.5 justify-between flex-wrap">
+                  {card.buttons.map((btn, i) => (
+                    <button
+                      key={i}
+                      className="gpgsignbutton px-[11px] sm:px-[12px] md:px-[13px] lg:px-[14px] xl:px-[15px] 2xl:px-[16px] py-[5px] lg:py-[10px] mb-[13px] sm:mb-[14px] md:mb-[15px] lg:mb-[16px] xl:mb-[20px] 2xl:mb-[23px]"
+                    >
+                      {btn}
+                    </button>
+                  ))}
                 </div>
 
-                {/* Button 2 */}
-                <button className="relative downloadbutton overflow-hidden text-white text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] px-[14px] sm:px-[15px] md:px-[16px] lg:px-[20px] xl:px-[24px] 2xl:px-[32px] py-[12px] sm:py-[13px] md:py-[14px] lg:py-[15px] xl:py-[16px] 2xl:py-[20px] mb-[1px] w-full rounded-[42px] border border-white/15 bg-transparent cursor-pointer transition-all duration-1000 group">
+                {/* Download Button */}
+                <button
+                  className={`relative downloadbutton overflow-hidden text-white text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] px-[14px] sm:px-[15px] md:px-[16px] lg:px-[20px] xl:px-[24px] 2xl:px-[32px] py-[12px] sm:py-[13px] md:py-[14px] lg:py-[15px] xl:py-[16px] 2xl:py-[20px] mb-[1px] w-full rounded-[42px] border border-white/15 bg-transparent cursor-pointer transition-all duration-1000 group`}
+                >
                   <span className="relative z-10">Download Litecoin</span>
-                  <span className="absolute inset-0 border border-white/15 bg-gradient-to-b from-[#4F1AD6] to-[#8059E3] opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[42px]"></span>
+                  <span
+                    className={`absolute inset-0 border border-white/15 bg-gradient-to-b from-[#4F1AD6] to-[#8059E3] transition-opacity duration-700 rounded-[42px] ${
+                      index === 0 ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                    }`}
+                  ></span>
                 </button>
               </div>
             ))}

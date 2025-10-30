@@ -7,8 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { LiaBarsSolid } from "react-icons/lia";
 import { VscChromeClose } from "react-icons/vsc";
 import logo from './image/logo.png';
-import usimage from './image/us.png';
-import chimage from './image/us.png';
+import { default as chimage, default as usimage } from './image/us.png';
 
 
 const NavBar = () => {
@@ -111,7 +110,7 @@ const NavBar = () => {
             isVisible ? "translate-y-0 transition-transform duration-300  " : "-translate-y-full transition-transform duration-300"
         }`}>
             
-            <header className='px-[24px] sm:px-[40px] md:px-[48px] lg:px-[64px] xl:px-[96px] 2xl:px-[114px]   flex justify-between items-center py-[12px] sm:py-[14px] lg:py-[16px] relative  '>
+            <header className='px-[24px] sm:px-[40px] md:px-[48px] lg:px-[64px] xl:px-[96px] 2xl:px-[320px]   flex justify-between items-center py-[12px] sm:py-[14px] lg:py-[16px] relative  '>
             <div className='linersext absolute bottom-0 left-0 w-full h-[2px] z-10'></div>
             <Link onClick={(e) => handleScrollToTop(e, "")} href='/' className='cursor-pointer flex items-center justify-start Froggo-Logo'>
                 <Image className='w-full h-[20px] sm:h-[26px] 2xl:h-[30px]' src={logo} alt=''/></Link>

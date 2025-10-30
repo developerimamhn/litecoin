@@ -81,11 +81,11 @@ body {
 }
 
 @layer utilities {
-  .selectboxseZ{
+  .selectboxseZ {
     border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(255, 255, 255, 0.04);
-    color: #FFF;
+    color: #fff;
     leading-trim: both;
     text-edge: cap;
     font-family: "General Sans";
@@ -93,49 +93,51 @@ body {
     font-weight: 400;
     line-height: 120%; /* 19.2px */
   }
-  .copyright{
-    color: #FFF;
+  .copyright {
+    color: #fff;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 400;
     line-height: 26px; /* 162.5% */
     letter-spacing: -0.2px;
   }
-  .subscrbuttonmail{
+  .subscrbuttonmail {
     border-radius: 30px;
-    background: linear-gradient(180deg, #4F1AD6 0%, #8059E3 100%);
-    box-shadow: 0 0.602px 3.011px -1px rgba(79, 26, 214, 0.29), 0 2.289px 11.443px -2px rgba(79, 26, 214, 0.28), 0 10px 50px -3px rgba(79, 26, 214, 0.20);
+    background: linear-gradient(180deg, #4f1ad6 0%, #8059e3 100%);
+    box-shadow: 0 0.602px 3.011px -1px rgba(79, 26, 214, 0.29),
+      0 2.289px 11.443px -2px rgba(79, 26, 214, 0.28),
+      0 10px 50px -3px rgba(79, 26, 214, 0.2);
     border: 3px solid rgba(255, 255, 255, 0.15);
-    color: #FFF;
+    color: #fff;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 500;
     line-height: 26px; /* 185.714% */
     letter-spacing: -0.5px;
   }
-  .inputfielssec{
+  .inputfielssec {
     border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .inputfimain{
-    color: rgba(255, 255, 255, 0.60);
+  .inputfimain {
+    color: rgba(255, 255, 255, 0.6);
     font-family: "General Sans";
     font-style: normal;
     font-weight: 500;
     line-height: 16%;
   }
-  .subsecnow{
-    color: #FFF;
+  .subsecnow {
+    color: #fff;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 27px */
   }
-  .buttonseccmainsatg{
+  .buttonseccmainsatg {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    background: linear-gradient(180deg, #4F1AD6 0%, #8059E3 100%);
-    color: #FFF;
+    background: linear-gradient(180deg, #4f1ad6 0%, #8059e3 100%);
+    color: #fff;
     leading-trim: both;
     text-edge: cap;
     font-family: "General Sans";
@@ -144,50 +146,50 @@ body {
     line-height: 130%; /*  */
     letter-spacing: -0.5px;
   }
-    .nameareasectionmail::placeholder{
+  .nameareasectionmail::placeholder {
     color: rgba(255, 255, 255, 0.32);
     leading-trim: both;
     text-edge: cap;
-    font-family: 'General Sans';
+    font-family: "General Sans";
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
   }
-  .nameareasectionmail{
+  .nameareasectionmail {
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(4.5px);
     color: rgba(255, 255, 255, 0.32);
     leading-trim: both;
     text-edge: cap;
-    font-family: 'General Sans';
+    font-family: "General Sans";
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
   }
-  .cotnacktoutprojd{
+  .cotnacktoutprojd {
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(4.5px);
   }
-  .contackpaone{
-    color: #FFF;
+  .contackpaone {
+    color: #fff;
     font-family: "DM Sans";
     font-style: normal;
     font-weight: 400;
     line-height: 130%; /* 70.2px */
   }
-  .litecinconwebsite{
-    color: #8F89A7;
+  .litecinconwebsite {
+    color: #8f89a7;
     font-family: "DM Sans";
     font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 25.6px */
   }
-  .outweb{
-    color: #8F89A7;
+  .outweb {
+    color: #8f89a7;
     leading-trim: both;
     text-edge: cap;
     font-family: "General Sans";
@@ -195,8 +197,8 @@ body {
     font-weight: 400;
     line-height: 162.5%; /*  */
   }
-  .ourmailcon{
-    color: #FFF;
+  .ourmailcon {
+    color: #fff;
     leading-trim: both;
     text-edge: cap;
     font-family: "General Sans";
@@ -205,14 +207,14 @@ body {
     line-height: 144.444%; /*  */
     letter-spacing: -0.5px;
   }
-  .contackmailsse{
+  .contackmailsse {
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(12px);
   }
-  .downloadbutton{
-    color: #FFF;
+  .downloadbutton {
+    color: #fff;
     leading-trim: both;
     text-edge: cap;
     font-family: "DM Sans";
@@ -225,72 +227,85 @@ body {
     /* ransition: 0.5s; */
     /* background: none; */
   }
-  .downloadbutton:hover{
+  .downloadbutton:hover {
     /* border-radius: 42px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: linear-gradient(180deg, #4F1AD6 0%, #8059E3 100%); */
   }
-  .gpgsignbutton{
-    color: #FFF;
+  .gpgsignbutton {
+    color: #fff;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 19.6px */
     border-radius: 80px;
-    border: 1px solid rgba(128, 89, 227, 0.50);
+    border: 1px solid rgba(128, 89, 227, 0.5);
   }
-  .lichangwinds{
-    color: #C6C3D2;
+  .lichangwinds {
+    color: #c6c3d2;
     text-align: center;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
   }
-  .dowloheadibng{
-    color: #FFF;
+  .dowloheadibng {
+    color: #fff;
     text-align: center;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
   }
-  .downloaddifferentland{
+  /* .downloaddifferentland {
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.00) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
     transition: 0.4s;
   }
-  .downloaddifferentland:hover{
+  .downloaddifferentland:hover {
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    background: linear-gradient(180deg, rgba(128, 89, 227, 0.15) 0%, rgba(255, 255, 255, 0.00) 100%);
-  }
-  .lineroneaszd{
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.00) 100%) ;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+      180deg,
+      rgba(128, 89, 227, 0.15) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  } */
+  .lineroneaszd {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
     width: 100%;
     height: 2px;
   }
-  .sodigasaswe{
-    color: #FFF;
+  .sodigasaswe {
+    color: #fff;
     text-align: center;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 600;
     line-height: 150%; /* 30px */
   }
-  .fdisannumbelit{
-    color: #C6C3D2;
+  .fdisannumbelit {
+    color: #c6c3d2;
     text-align: center;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 21px */
   }
-  .litecoin{
+  .litecoin {
     border-radius: 80px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #FFF;
+    color: #fff;
     leading-trim: both;
     text-edge: cap;
     font-family: "General Sans";
@@ -298,9 +313,14 @@ body {
     font-weight: 400;
     line-height: 150%;
   }
-  .borderanotherfeds{
+  .borderanotherfeds {
     border-radius: 20px;
-    background: linear-gradient(0deg, rgba(26, 64, 214, 0.00) 62.59%, #1A40D6 154.74%), #080808;
+    background: linear-gradient(
+        0deg,
+        rgba(26, 64, 214, 0) 62.59%,
+        #1a40d6 154.74%
+      ),
+      #080808;
   }
   .sdvdsazwsavsdv {
     border-radius: 50px 50px 24px 24px;
@@ -910,7 +930,12 @@ body {
   }
 
   .voerflow {
-    background: linear-gradient(0deg, rgba(39, 36, 253, 0.16) 0%, rgba(39, 36, 253, 0.00) 100%), #000;
+    background: linear-gradient(
+        0deg,
+        rgba(39, 36, 253, 0.16) 0%,
+        rgba(39, 36, 253, 0) 100%
+      ),
+      #000;
   }
   .extasiscuting {
     color: #fff;
@@ -1761,10 +1786,9 @@ body {
     opacity: 10%;
     transition: 0.5s;
     backdrop-filter: blur(10px);
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
-
   /* Slide-up animation */
   @keyframes slideUp {
     to {
@@ -1796,7 +1820,7 @@ body {
     line-height: 100%;
   }
   .Link-manu-bar {
-    color: #C6C3D2;
+    color: #c6c3d2;
     font-family: "General Sans";
     font-style: normal;
     font-weight: 400;
@@ -1808,8 +1832,31 @@ body {
   .backgroundheader {
     background: linear-gradient(180deg, #141024 0%, #070510 50%);
   }
-  .coonatainaedgaewf{
+  .coonatainaedgaewf {
     border-radius: 50px 50px 24px 24px;
-    background: linear-gradient(180deg, rgba(39, 36, 253, 0.27) 0%, rgba(39, 36, 253, 0.00) 50%), #000;
+    background: linear-gradient(
+        180deg,
+        rgba(39, 36, 253, 0.27) 0%,
+        rgba(39, 36, 253, 0) 50%
+      ),
+      #000;
+  }
+  .leadingsderad {
+    border-radius: 20px;
+    border: 2px solid #1a40d6;
+    background: linear-gradient(
+        0deg,
+        rgba(26, 64, 214, 0) 62.59%,
+        #1a40d6 154.74%
+      ),
+      #080808;
+  }
+  .leadingsectionarea {
+    background: linear-gradient(
+        360deg,
+        rgba(39, 36, 253, 0.16) 0%,
+        rgba(39, 36, 253, 0) 50%
+      ),
+      #000;
   }
 }
