@@ -78,9 +78,9 @@ const cardsRef = useRef([]);
         x: 0,
         duration: 1.5,
         ease: "power2.out",
-        stagger: 0.3, // card গুলো sequentially animation হবে
+        stagger: 0.3,
         scrollTrigger: {
-          trigger: cardsRef.current[0], // প্রথম card কে trigger বানাচ্ছি
+          trigger: cardsRef.current[0],
           start: "top 90%",
           end: "bottom 80%",
           scrub: true,

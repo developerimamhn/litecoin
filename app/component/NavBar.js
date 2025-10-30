@@ -135,18 +135,19 @@ const NavBar = () => {
                     ${toggle ? 'left-[0]' :'left-[120%]' }
                     ${toggle ? 'opacity-100' : 'opacity-10'} 
                     `} >
-                    <a className="cursor-pointer Link-manu-bar flex items-center gap-[6px] lg:gap-[8px]" href="#About" onClick={(e) => handleScroll(e, "About")}>
-                    About</a>
+                    <a className="cursor-pointer Link-manu-bar flex items-center gap-1.5 lg:gap-[8px] hover:text-cyan-400 hover:scale-105" href="#About" onClick={(e) => handleScroll(e, "About")}>
+                    About
+                    </a>
 
-                    <a className="cursor-pointer Link-manu-bar flex items-center gap-[6px] lg:gap-[8px]" href="#Download" onClick={(e) => handleScroll(e, "Download")}>
+                    <a className="cursor-pointer Link-manu-bar flex items-center gap-1.5 lg:gap-[8px] hover:text-cyan-400 hover:scale-105" href="#Download" onClick={(e) => handleScroll(e, "Download")}>
                     Download</a>
 
-                    <a className="cursor-pointer Link-manu-bar flex items-center gap-[6px] lg:gap-[8px]" href="#Contact" onClick={(e) => handleScroll(e, "Contact")}>
+                    <a className="cursor-pointer Link-manu-bar flex items-center gap-1.5 lg:gap-[8px] hover:text-cyan-400 hover:scale-105" href="#Contact" onClick={(e) => handleScroll(e, "Contact")}>
                     Contact</a>
                     
-                    <a className="cursor-pointer Link-manu-bar flex items-center gap-[6px] lg:gap-[8px]" href="#Forum" onClick={(e) => handleScroll(e, "Forum")}>
+                    <a className="cursor-pointer Link-manu-bar flex items-center gap-1.5 lg:gap-[8px] hover:text-cyan-400 hover:scale-105" href="#Forum" onClick={(e) => handleScroll(e, "Forum")}>
                     Forum</a>
-                    <a className="cursor-pointer Link-manu-bar flex items-center gap-[6px] lg:gap-[8px]" href="#Foundation" onClick={(e) => handleScroll(e, "Foundation")}>
+                    <a className="cursor-pointer Link-manu-bar flex items-center gap-1.5 lg:gap-[8px] hover:text-cyan-400 hover:scale-105" href="#Foundation" onClick={(e) => handleScroll(e, "Foundation")}>
                     Foundation</a>
                     <ul className='sm:hidden flex flex-col ml-atuo gap-4'>
                         <div className="select-wrapper relative inline-block">
@@ -194,7 +195,7 @@ const NavBar = () => {
                 </nav>
                 
                 <ul className='sm:flex hidden gap-4'>
-                    <div className="select-wrapper relative inline-block">
+                    <div className="select-wrapper relative inline-block cursor-pointer">
                     {/* Main button */}
                     <div
                         className="selectboxseZ text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] flex items-center px-[13px] sm:px-[14px] md:px-[15px] lg:px-[16px] xl:px-[20px] 2xl:px-[24px] py-[11px] sm:py-[12px] md:py-[13px] lg:py-[14px] xl:py-[15px] 2xl:py-[16px] gap-[5px] lg:gap-[8px]"

@@ -1,22 +1,42 @@
 "use client";
 
 
-import React,{useEffect,useState,useRef} from 'react';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 import Image from 'next/image';
+import { useEffect } from "react";
 import logo from './image/logo.png';
-import Link from 'next/link';
+gsap.registerPlugin(ScrollTrigger);
 
 
 
 
 const Footer = () => {
+  useEffect(() => {
+        const texts = gsap.utils.toArray(".text");
+    
+        texts.forEach((text) => {
+          gsap.fromTo(
+            text,
+            { opacity: 0, y: -300 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1.4,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: text,
+                start: "top 95%", // when the top of the card hits 80% of viewport
+                toggleActions: "play none none none", // play only once
+              },
+            }
+          );
+        });
+      }, []);
     return (
         <div id='Community' className='relative -mt-[1] pt-[32px] sm:pt-[36px] md:pt-[40px] lg:pt-[48px] xl:pt-[64px] 2xl:pt-[84px]'>
-          <div className='voerflow w-full h-full absolute top-0 left-0 z-[-2]' ></div>
-          <div className=' container mx-auto sm:px-0 px-6'>
+          <div className='voerflow w-full h-full absolute top-0 left-0 z-[-2] ' ></div>
+          <div className=' container mx-auto sm:px-0 px-6 text'>
             <div className='flex items-center sm:items-start justify-center sm:justify-between sm:flex-row flex-col'>
               <div className='flex sm:block items-center jsutify-center '>
                 <Image className='mb-[13px] sm:mb-[14px] md:mb-[15px] lg:mb-[16px] xl:mb-[20px] 2xl:mb-[24px] w-fit h-[20px] sm:h-[26px] 2xl:h-[30px]' src={logo} alt='Logo...'/>

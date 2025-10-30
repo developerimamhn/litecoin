@@ -2,7 +2,7 @@
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/effect-flip';
 import 'swiper/css/navigation';
@@ -18,12 +18,34 @@ import imageone from './image/Frame 19.png';
 
 const Pagefive = () => {
   const swiperRef = useRef(null);
+    useEffect(() => {
+    const cards = gsap.utils.toArray(".card");
+
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 200, x: -200 },
+        {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 95%", // when the top of the card hits 80% of viewport
+            toggleActions: "play none none none", // play only once
+          },
+        }
+      );
+    });
+  }, []);
   return (
     <div id="Blog" className="relative py-8 sm:py-9 md:py-10 lg:py-12 xl:py-16 2xl:py-[100px] mt-[36px] sm:mt-[40px] md:mt-[48px] lg:mt-[64px] xl:mt-[96px] 2xl:mt-[128px] 2xl:mx-6">
       <div className='coonatainaedgaewf w-full h-full absolute top-0 left-1/2 -translate-x-1/2 '></div>
-      <div id='pin-windmill' className="relative container md:flex-row flex-col mx-auto flex jusitfy-between md:grid grid-cols-12 gap-4 items-center sm:px-0 px-6">
+      <div id='pin-windmill' className="card relative container md:flex-row flex-col mx-auto flex jusitfy-between md:grid grid-cols-12 gap-4 items-center sm:px-0 px-6">
 
-        <button  className="custom-next cursor-pointer md:block hidden transition hover:scale-110 hover:opacity-80 duration-300 col-span-2 relative mr-auto 2xl:w-1/2 h-fit rounded-full lg:col-start-3">
+        <button  className=" custom-next cursor-pointer md:block hidden transition hover:scale-110 hover:opacity-80 duration-300 col-span-2 relative mr-auto 2xl:w-1/2 h-fit rounded-full lg:col-start-3">
           <div class="absolute inset-0 block h-full w-full animate-gradient bg-linear-to-tr from-[#ffffff63] via-[#fff0] to-[#ffffff63] bg-[length:var(--bg-size)_100%] [border-radius:inherit] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] p-[1px] ![mask-composite:subtract]"></div>
           <svg
             className='rounded-full w-[36px] sm:w-[40px] md:w-[48px] lg:w-[64px] xl:w-[96px] 2xl:w-full'
@@ -70,7 +92,7 @@ const Pagefive = () => {
           }}
           modules={[EffectFlip, Pagination, Navigation,Autoplay]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
-          className="mySwiper w-full col-span-8 lg:col-span-5 2xl:col-span-4 relative"
+          className="mySwiper  w-full col-span-8 lg:col-span-5 2xl:col-span-4 relative"
         >
           <SwiperSlide className=''>
             <div className='leadingsderad p-px'>

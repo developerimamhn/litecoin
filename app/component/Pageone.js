@@ -2,15 +2,58 @@
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 
 
 const Pageone = () => {
+  useEffect(() => {
+      const cards = gsap.utils.toArray(".card");
+  
+      cards.forEach((card) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 200 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 95%", // when the top of the card hits 80% of viewport
+              toggleActions: "play none none none", // play only once
+            },
+          }
+        );
+      });
+    }, []);
+    useEffect(() => {
+      const texts = gsap.utils.toArray(".text");
+  
+      texts.forEach((text) => {
+        gsap.fromTo(
+          text,
+          { opacity: 0, y: -200 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: text,
+              start: "top 95%", // when the top of the card hits 80% of viewport
+              toggleActions: "play none none none", // play only once
+            },
+          }
+        );
+      });
+    }, []);
     return (
         <div  id='About'  className='relative w-full pb-[36px] sm:pb-[40px] md:pb-[48px] lg:pb-[64px] xl:pb-[96px] 2xl:pb-[130px] pt-[36px] sm:pt-[40px] md:pt-[48px] lg:pt-[64px] xl:pt-[96px] 2xl:pt-[123px]'>
             <div className='container mx-auto px-[24px] sm:px-0 '>
-              <svg className='w-full' viewBox="0 0 1293 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className='w-full text' viewBox="0 0 1293 113" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M98.1711 39.6838H74.8402C74.414 36.6654 73.544 33.9843 72.2301 31.6405C70.9162 29.2612 69.2294 27.2371 67.1697 25.5681C65.11 23.899 62.7308 22.6206 60.0319 21.7328C57.3686 20.8451 54.4744 20.4012 51.3494 20.4012C45.7031 20.4012 40.7848 21.8039 36.5944 24.6093C32.4041 27.3791 29.1548 31.4274 26.8465 36.7542C24.5383 42.0453 23.3842 48.4729 23.3842 56.0368C23.3842 63.8138 24.5383 70.3479 26.8465 75.6391C29.1903 80.9303 32.4573 84.9253 36.6477 87.6242C40.838 90.323 45.6853 91.6725 51.1896 91.6725C54.2791 91.6725 57.1377 91.2641 59.7656 90.4473C62.4289 89.6306 64.7904 88.4409 66.8501 86.8784C68.9098 85.2804 70.6143 83.3451 71.9637 81.0723C73.3487 78.7996 74.3075 76.2073 74.8402 73.2953L98.1711 73.4019C97.5674 78.409 96.0582 83.2385 93.6434 87.8905C91.2642 92.507 88.0504 96.6441 84.0021 100.302C79.9893 103.924 75.1953 106.8 69.62 108.931C64.0802 111.026 57.8125 112.074 50.8167 112.074C41.0866 112.074 32.3863 109.872 24.7159 105.469C17.0809 101.065 11.044 94.6909 6.60507 86.3458C2.20166 78.0006 -4.43384e-05 67.8976 -4.43384e-05 56.0368C-4.43384e-05 44.1405 2.23717 34.0198 6.7116 25.6746C11.186 17.3294 17.2585 10.9729 24.9289 6.605C32.5994 2.20159 41.2287 -0.000115037 50.8167 -0.000115037C57.1377 -0.000115037 62.9971 0.887669 68.3948 2.66324C73.8281 4.43881 78.6399 7.03113 82.8302 10.4402C87.0206 13.8138 90.4296 17.9509 93.0575 22.8514C95.7208 27.752 97.4254 33.3628 98.1711 39.6838ZM307.959 56.0368C307.959 67.9331 305.704 78.0539 301.194 86.399C296.72 94.7442 290.612 101.118 282.87 105.522C275.164 109.89 266.5 112.074 256.876 112.074C247.181 112.074 238.481 109.872 230.775 105.469C223.069 101.065 216.979 94.6909 212.505 86.3458C208.03 78.0006 205.793 67.8976 205.793 56.0368C205.793 44.1405 208.03 34.0198 212.505 25.6746C216.979 17.3294 223.069 10.9729 230.775 6.605C238.481 2.20159 247.181 -0.000115037 256.876 -0.000115037C266.5 -0.000115037 275.164 2.20159 282.87 6.605C290.612 10.9729 296.72 17.3294 301.194 25.6746C305.704 34.0198 307.959 44.1405 307.959 56.0368ZM284.575 56.0368C284.575 48.3309 283.421 41.8323 281.113 36.5411C278.84 31.2499 275.626 27.2371 271.471 24.5027C267.316 21.7684 262.451 20.4012 256.876 20.4012C251.301 20.4012 246.436 21.7684 242.281 24.5027C238.126 27.2371 234.894 31.2499 232.586 36.5411C230.314 41.8323 229.177 48.3309 229.177 56.0368C229.177 63.7428 230.314 70.2414 232.586 75.5326C234.894 80.8238 238.126 84.8365 242.281 87.5709C246.436 90.3053 251.301 91.6725 256.876 91.6725C262.451 91.6725 267.316 90.3053 271.471 87.5709C275.626 84.8365 278.84 80.8238 281.113 75.5326C283.421 70.2414 284.575 63.7428 284.575 56.0368ZM509.291 1.49136V110.582H489.369L441.908 41.9211H441.109V110.582H418.045V1.49136H438.286L485.374 70.0993H486.333V1.49136H509.291ZM617.192 20.5077V1.49136H706.788V20.5077H673.389V110.582H650.591V20.5077H617.192ZM820.016 110.582H795.3L832.96 1.49136H862.683L900.289 110.582H875.573L848.247 26.4203H847.395L820.016 110.582ZM818.471 67.7023H876.852V85.7066H818.471V67.7023ZM1097.55 39.6838H1074.22C1073.79 36.6654 1072.92 33.9843 1071.61 31.6405C1070.29 29.2612 1068.6 27.2371 1066.54 25.5681C1064.49 23.899 1062.11 22.6206 1059.41 21.7328C1056.74 20.8451 1053.85 20.4012 1050.72 20.4012C1045.08 20.4012 1040.16 21.8039 1035.97 24.6093C1031.78 27.3791 1028.53 31.4274 1026.22 36.7542C1023.91 42.0453 1022.76 48.4729 1022.76 56.0368C1022.76 63.8138 1023.91 70.3479 1026.22 75.6391C1028.57 80.9303 1031.83 84.9253 1036.02 87.6242C1040.21 90.323 1045.06 91.6725 1050.56 91.6725C1053.65 91.6725 1056.51 91.2641 1059.14 90.4473C1061.8 89.6306 1064.17 88.4409 1066.23 86.8784C1068.28 85.2804 1069.99 83.3451 1071.34 81.0723C1072.72 78.7996 1073.68 76.2073 1074.22 73.2953L1097.55 73.4019C1096.94 78.409 1095.43 83.2385 1093.02 87.8905C1090.64 92.507 1087.43 96.6441 1083.38 100.302C1079.36 103.924 1074.57 106.8 1068.99 108.931C1063.46 111.026 1057.19 112.074 1050.19 112.074C1040.46 112.074 1031.76 109.872 1024.09 105.469C1016.46 101.065 1010.42 94.6909 1005.98 86.3458C1001.58 78.0006 999.375 67.8976 999.375 56.0368C999.375 44.1405 1001.61 34.0198 1006.09 25.6746C1010.56 17.3294 1016.63 10.9729 1024.3 6.605C1031.97 2.20159 1040.6 -0.000115037 1050.19 -0.000115037C1056.51 -0.000115037 1062.37 0.887669 1067.77 2.66324C1073.2 4.43881 1078.01 7.03113 1082.21 10.4402C1086.4 13.8138 1089.8 17.9509 1092.43 22.8514C1095.1 27.752 1096.8 33.3628 1097.55 39.6838ZM1202.93 20.5077V1.49136H1292.53V20.5077H1259.13V110.582H1236.33V20.5077H1202.93Z" fill="url(#paint0_linear_1401_2915)" fill-opacity="0.4"/>
               <defs>
               <linearGradient id="paint0_linear_1401_2915" x1="645.118" y1="1.58228" x2="645.118" y2="116.259" gradientUnits="userSpaceOnUse">
@@ -19,7 +62,7 @@ const Pageone = () => {
               </linearGradient>
               </defs>
               </svg>
-              <div  className='grid grid-cols-1 sm:grid-cols-2 gap-[32px] sm:gap-[36px] md:gap-[40px] lg:gap-[48px] xl:gap-[64px] 2xl:gap-[96px]'>
+              <div  className='grid card grid-cols-1 sm:grid-cols-2 gap-[32px] sm:gap-[36px] md:gap-[40px] lg:gap-[48px] xl:gap-[64px] 2xl:gap-[96px]'>
                 <div>
                   <button className='buttonauditeltsss relative cursor-pointer text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] flex items-center py-[7px] sm:py-[8px] md:py-[6px] pr-[10px] sm:pr-[11px] md:pr-[12px] lg:pr-[13px] xl:pr-[14px] 2xl:pr-[15px] group gap-[7.50px] pl-[7px] sm:pl-[8px] md:pl-[6px]'>
                     <div
@@ -39,7 +82,7 @@ const Pageone = () => {
                     </svg>
                     Contact us
                   </button>
-                  <h2 className='contackpaone text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[54px] pt-[12px] sm:pt-[13px] md:pt-[14px] lg:pt-[15px] xl:pt-[16px] 2xl:pt-[20px]'>Contact us</h2>
+                  <h2 className='contackpaone text-[24px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[54px] pt-[12px] sm:pt-[13px] md:pt-[14px] lg:pt-[15px] xl:pt-[16px] 2xl:pt-[20px]'>Email us</h2>
                   <p className='litecinconwebsite text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] pt-[5px] lg:pt-[8px]'>
                     You can contact Litecoin project development team at <div className='text-[#8059E3]'>contact@litecoin.org</div>
                   </p>
@@ -238,8 +281,8 @@ const Pageone = () => {
                             </svg>
 
                         <div className='flex items-start justify-between flex-col'>
-                          <p className='ourmailcon text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px]'>Email us</p>
-                          <p className='outweb text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]'>contact@litecoin.org</p>
+                          <p className='ourmailcon text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px]'>Call us</p>
+                          <p className='outweb text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]'>(501) 125-4507</p>
                         </div>
                       </div>
                       
@@ -403,8 +446,8 @@ const Pageone = () => {
                           </svg>
 
                         <div className='flex items-start justify-between flex-col'>
-                          <p className='ourmailcon text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px]'>Email us</p>
-                          <p className='outweb text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]'>contact@litecoin.org</p>
+                          <p className='ourmailcon text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px]'>Our Location</p>
+                          <p className='outweb text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]'>USA</p>
                         </div>
                       </div>
                       

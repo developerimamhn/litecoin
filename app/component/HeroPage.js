@@ -1,11 +1,11 @@
 'use client';
 
+import { gsap } from "gsap";
 import Image from 'next/image';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import pageone from './image/slide7.png';
-import { gsap } from "gsap";
 
 
 
@@ -92,14 +92,33 @@ const HeroPage = () => {
       }
     );
   }, []);
-
+  useEffect(() => {
+    gsap.fromTo(
+      ".glass-card",
+      { opacity: 0, y: 120, scale: 0.9, filter: "blur(10px)" },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        filter: "blur(0px)",
+        duration: 1.5,
+        ease: "power3.out",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".glass-container",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
     return (
         <div id="hero" className='relative'>
           <div className='relative z-2 '>
             <div className='container mx-auto px-[24px] sm:px-0 w-full relative flex items-center justify-center flex-col'>
                 <div  className='flex items-center justify-between flex-col h-screen pt-[70px] sm:pt-[70px] md:pt-[90px] lg:pt-[120px] xl:pt-[130px] 2xl:pt-[8%] relative'>
-                  <div className='flex items-center flex-col justify-center'>
-                    <h2 ref={textRef} className="tradines text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[64px] 2xl:text-[86px] font-bold text-center mt-10">
+                  <div className='flex items-center flex-col justify-center glass-card'>
+                    <h2 ref={textRef} className="tradines  text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px] xl:text-[64px] 2xl:text-[86px] font-bold text-center mt-10">
                       The Cryptocurrency <br className="sm:block hidden" /> For Payments
                     </h2>
                     <p ref={textRefs} className='bitstartp text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] xl:text-[20px] 2xl:text-[24px] pt-[11px] sm:pt-[12px] md:pt-[13px] lg:pt-[14px] xl:pt-[15px] 2xl:pt-[16px] pb-[14px] sm:pb-[15px] md:pb-[16px] lg:pb-[20px] xl:pb-[24px] 2xl:pb-[30px] text-center '>Based on Blockchain Technology</p>

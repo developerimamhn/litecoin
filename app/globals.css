@@ -145,6 +145,10 @@ body {
     font-weight: 500;
     line-height: 130%; /*  */
     letter-spacing: -0.5px;
+    transition: 0.4;
+  }
+  .buttonseccmainsatg:hover {
+    background: linear-gradient(70deg, #4f1ad6 0%, #8059e3 100%);
   }
   .nameareasectionmail::placeholder {
     color: rgba(255, 255, 255, 0.32);
@@ -1293,9 +1297,10 @@ body {
     font-weight: 500;
     line-height: 100%; /* */
     letter-spacing: -0.5px;
+    transition: 0.5s;
   }
   .buttonauditelt:hover {
-    background: linear-gradient(180deg, #4f1ad6 0%, #8059e3 100%);
+    background: linear-gradient(80deg, #4f1ad6 0%, #8059e3 100%);
   }
   .svgsasdf {
     border-radius: 40px;
@@ -1827,7 +1832,7 @@ body {
     line-height: 160%; /* 25.6px */
   }
   .Link-manu-bar {
-    @apply text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[14px] 2xl:text-[16px] duration-300 text-[#C6C3D2]  hover:text-[#d7caff];
+    @apply text-[10px] sm:text-[11px] md:text-[12px] lg:text-[13px] xl:text-[14px] 2xl:text-[16px] duration-300 text-[#C6C3D2]  hover:text-[#fff];
   }
   .backgroundheader {
     background: linear-gradient(180deg, #141024 0%, #070510 50%);
